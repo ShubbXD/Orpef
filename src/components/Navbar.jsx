@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { motion } from "motion/react"
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+  const location = useLocation(); // ✅ to detect active route
 
   const menuLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/About" },
+    { name: "About", path: "/about" },
     { name: "Members", path: "/members" },
     { name: "Contact", path: "/contact" },
-    { name: "FAQ", path: "/FAQ" },
+    { name: "FAQ", path: "/faq" },
   ];
 
   const handleSearch = (e) => {
@@ -24,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <><motion.nav
+    <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -52,13 +53,17 @@ const Navbar = () => {
               animate="rest"
               variants={{
                 rest: { scale: 1 },
-                hover: { scale: 1.1 }
+                hover: { scale: 1.05 }
               }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Link
                 to={link.path}
-                className="text-gray-800 font-medium hover:text-blue-600 transition relative"
+                className={`relative font-medium transition 
+                  ${location.pathname === link.path 
+                    ? "text-blue-700 font-semibold"   // ✅ active page highlight
+                    : "text-gray-800 hover:text-blue-600"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -66,7 +71,7 @@ const Navbar = () => {
               <motion.span
                 className="absolute left-0 bottom-[-4px] h-[2px] bg-blue-600"
                 variants={{
-                  rest: { width: 0 },
+                  rest: { width: location.pathname === link.path ? "100%" : 0 },
                   hover: { width: "100%" }
                 }}
                 transition={{ duration: 0.3 }}
@@ -119,12 +124,17 @@ const Navbar = () => {
             <Link
               key={index}
               to={link.path}
-              className="block text-gray-800 font-medium hover:text-blue-600 transition"
+              className={`block font-medium transition 
+                ${location.pathname === link.path 
+                  ? "text-blue-700 font-semibold"  // ✅ active state on mobile
+                  : "text-gray-800 hover:text-blue-600"
+                }`}
               onClick={() => setOpen(false)}
             >
               {link.name}
             </Link>
           ))}
+
           {/* Mobile Search */}
           <form
             onSubmit={(e) => {
@@ -144,8 +154,6 @@ const Navbar = () => {
         </motion.div>
       )}
     </motion.nav>
-    </>
-    
   );
 };
 

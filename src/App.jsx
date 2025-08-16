@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
-import Navbar from "./components/Navbar"; 
-import Home from "./components/Home"; 
-import About from "./components/About";
-import Services from "./components/Services";  
+import { Routes, Route } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
+
+// Components
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonial";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
+
+// Pages
+import FAQ from "./pages/FAQ";
+
 const App = () => {
   useEffect(() => {
-    // ✅ Initialize Lenis smooth scrolling once in App
     const lenis = new Lenis({
       duration: 1.2,
       smooth: true,
@@ -30,21 +36,35 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900">
-      {/* ✅ Navbar fixed at top */}
+      {/* Navbar always visible */}
       <Navbar />
 
-      {/* ✅ Main content below navbar */}
-      {/* Removed space-y-20, let each section handle its own padding */}
+      {/* Routes */}
       <main className="flex-1 mt-20">
-        <Home />
-        <About />
-        <Services />
-        <Contact />
-        <Gallery />
-        <Testimonials/>
-        <Newsletter />
-        <Footer />
+        <Routes>
+          {/* Landing Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <About />
+                <Services />
+                <Gallery />
+                <Testimonials />
+                <Newsletter />
+                <Contact />
+              </>
+            }
+          />
+
+          {/* FAQ Page */}
+          <Route path="/faq" element={<FAQ />} />
+        </Routes>
       </main>
+
+      {/* Footer always visible */}
+      <Footer />
     </div>
   );
 };

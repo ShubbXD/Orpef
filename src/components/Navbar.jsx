@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -9,10 +9,10 @@ const Navbar = () => {
 
   const menuLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Alumnis", path: "/alumnis" },
+    { name: "About", path: "/About" },
+    { name: "Members", path: "/members" },
     { name: "Contact", path: "/contact" },
-    { name: "Vision", path: "/vision" },
+    { name: "FAQ", path: "/FAQ" },
   ];
 
   const handleSearch = (e) => {
@@ -24,25 +24,25 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
+    <><motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="bg-gradient-to-r from-green-100 via-blue-100 to-blue-300 shadow-md fixed w-full top-0 left-0 z-50 border-b border-gray-300"
     >
-      <div className="container mx-auto flex justify-between items-center px-6 py-3 relative">
+      <div className="container mx-auto flex justify-between items-center px-6 py-3">
         
         {/* Logo */}
-        <Link to="/" className="relative z-10">
+        <Link to="/">
           <img
             src="/logo.png"
             alt="logo"
-            className="h-20 w-auto object-contain transition-all duration-300" // Increased height
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8 relative">
+        <div className="hidden lg:flex items-center gap-8">
           {menuLinks.map((link, index) => (
             <motion.div
               key={index}
@@ -77,12 +77,11 @@ const Navbar = () => {
           {/* Search */}
           <form
             onSubmit={handleSearch}
-            className="flex items-center gap-2 bg-white border border-gray-300 rounded-full px-3 py-1 shadow-sm w-24 transition-all duration-300 hover:w-32 hover:absolute hover:left-[-40px] hover:z-20"
-            style={{ position: "relative" }}
+            className="flex items-center gap-2 bg-white border border-gray-300 rounded-full px-3 py-1 shadow-sm"
           >
             <input
               type="text"
-              className="bg-transparent outline-none placeholder-gray-500 w-full"
+              className="bg-transparent outline-none placeholder-gray-500 w-32"
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -145,6 +144,8 @@ const Navbar = () => {
         </motion.div>
       )}
     </motion.nav>
+    </>
+    
   );
 };
 

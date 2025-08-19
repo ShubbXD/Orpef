@@ -11,7 +11,7 @@ const Newsletter = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/newsletter/image.png"
+          src="newsletter.jpg"
           alt="Newsletter"
           className="hidden md:block w-full h-full object-cover"
         />

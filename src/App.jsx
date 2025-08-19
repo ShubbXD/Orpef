@@ -5,16 +5,19 @@ import Lenis from "@studio-freight/lenis";
 // Components
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonial";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
+import Gallery1 from "./components/Gallery1"; // ✅ since it's a component
+import About1 from "./components/About1"; // ✅ since it's a component
 
 // Pages
 import FAQ from "./pages/FAQ";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Legal from "./components/Legal"; // ✅ since it's a component
 
 const App = () => {
   useEffect(() => {
@@ -48,18 +51,27 @@ const App = () => {
             element={
               <>
                 <Home />
-                <About />
                 <Services />
-                <Gallery />
+                <About1 />
                 <Testimonials />
+                <Gallery1/>
                 <Newsletter />
                 <Contact />
               </>
             }
           />
 
+          {/* About Page */}
+          <Route path="/about" element={<About />} />
+
+          {/* Gallery Page */}
+          <Route path="/gallery" element={<Gallery />} />
+
           {/* FAQ Page */}
           <Route path="/faq" element={<FAQ />} />
+
+          {/* ✅ Legal Page (component) */}
+          <Route path="/legal" element={<Legal />} />
         </Routes>
       </main>
 

@@ -20,17 +20,13 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="pt-28 px-4 sm:px-10 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, #f0f7ff 0%, #f9fcff 50%, #edfaff 100%)",
-      }} // ✅ softer light-blue gradient
+      className="pt-28 px-4 sm:px-10 overflow-hidden bg-blue-50"
     >
       <main className="flex flex-col items-center max-w-8xl mx-auto w-full text-center">
         
         {/* Top Badge */}
         <button
-          className="mb-6 flex items-center space-x-2 border border-blue-500 text-blue-500 text-xs rounded-full px-4 pr-1.5 py-1.5 hover:bg-blue-50 transition"
+          className="mb-6 flex items-center space-x-2 border border-blue-500 text-blue-500 text-xs rounded-full px-4 pr-1.5 py-1.5 hover:bg-blue-100 transition"
           type="button"
         >
           <span>Engineers united for public service</span>
@@ -89,15 +85,16 @@ const Home = () => {
           </svg>
         </a>
 
-        {/* Image Section */}
+        {/* Image Section with Hover Effect */}
         <motion.img
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          src="/friends3.jpg"
-          alt="ORPEF Engineers"
-          className="rounded-[40px] mt-16 h-96 sm:h-[28rem] md:h-[32rem] w-full object-cover max-w-6xl shadow-lg"
+          whileHover={{ scale: 1.05 }} // ✅ Framer Motion zoom on hover
+          src="/powerline.jpg"
+          alt="ORPEF Powerline"
+          className="rounded-[40px] mt-16 h-96 sm:h-[28rem] md:h-[32rem] w-full object-cover max-w-6xl shadow-lg transition duration-300 hover:brightness-110"
         />
       </main>
     </section>

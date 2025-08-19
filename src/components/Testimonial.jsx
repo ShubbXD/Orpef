@@ -6,28 +6,28 @@ const Testimonials = () => {
     {
       name: "Michael",
       role: "Community Volunteer",
-      img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+      img: "person.svg",
       quote:
         "ORPEF has been a guiding light in technical and social initiatives. Their voluntary services truly make a difference.",
     },
     {
       name: "James",
       role: "Local Resident",
-      img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+      img: "person.svg",
       quote:
         "The retired engineers bring unmatched wisdom. Their disaster relief work saved our community during tough times.",
     },
     {
       name: "Emily",
       role: "Student Engineer",
-      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
+      img: "person.svg",
       quote:
         "Learning from ORPEF mentors has been inspiring. Their legacy continues to empower the next generation of engineers.",
     },
     {
       name: "John",
       role: "Local Business Owner",
-      img: "https://randomuser.me/api/portraits/men/75.jpg",
+      img: "person.svg",
       quote:
         "It’s rare to see such dedication after retirement. ORPEF proves that experience never retires.",
     },

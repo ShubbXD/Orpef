@@ -6,7 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const location = useLocation(); // ✅ to detect active route
+  const location = useLocation(); // ✅ detect active route
 
   const menuLinks = [
     { name: "Home", path: "/" },
@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/search?q=${searchQuery}`);
+      navigate(`/members?q=${encodeURIComponent(searchQuery)}`); // ✅ go to Members page with query
       setSearchQuery("");
     }
   };
@@ -29,7 +29,7 @@ const Navbar = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-gradient-to-r from-green-100 via-blue-100 to-blue-300 shadow-md fixed w-full top-0 left-0 z-50 border-b border-gray-300"
+      className="bg-gradient-to-r from-green-50 via-blue-50 to-indigo-100 shadow-md fixed w-full top-0 left-0 z-50 border-b border-gray-200"
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-3">
         
@@ -61,7 +61,7 @@ const Navbar = () => {
                 to={link.path}
                 className={`relative font-medium transition 
                   ${location.pathname === link.path 
-                    ? "text-blue-700 font-semibold"   // ✅ active page highlight
+                    ? "text-blue-700 font-semibold"
                     : "text-gray-800 hover:text-blue-600"
                   }`}
               >
@@ -87,7 +87,7 @@ const Navbar = () => {
             <input
               type="text"
               className="bg-transparent outline-none placeholder-gray-500 w-32"
-              placeholder="Search..."
+              placeholder="Search members..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -118,7 +118,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="lg:hidden bg-white shadow-lg px-6 py-4 space-y-4 border-t border-gray-300"
+          className="lg:hidden bg-gradient-to-r from-green-50 via-blue-50 to-indigo-100 shadow-lg px-6 py-4 space-y-4 border-t border-gray-200"
         >
           {menuLinks.map((link, index) => (
             <Link
@@ -126,7 +126,7 @@ const Navbar = () => {
               to={link.path}
               className={`block font-medium transition 
                 ${location.pathname === link.path 
-                  ? "text-blue-700 font-semibold"  // ✅ active state on mobile
+                  ? "text-blue-700 font-semibold"
                   : "text-gray-800 hover:text-blue-600"
                 }`}
               onClick={() => setOpen(false)}
@@ -141,12 +141,12 @@ const Navbar = () => {
               handleSearch(e);
               setOpen(false);
             }}
-            className="flex items-center gap-2 bg-gray-100 border border-gray-300 rounded-full px-3 py-1"
+            className="flex items-center gap-2 bg-white border border-gray-300 rounded-full px-3 py-1"
           >
             <input
               type="text"
               className="bg-transparent outline-none placeholder-gray-500 w-full"
-              placeholder="Search..."
+              placeholder="Search members..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

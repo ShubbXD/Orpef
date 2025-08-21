@@ -68,6 +68,11 @@ export default function Footer() {
         </a>
       </div>
 
+      {/* Built By */}
+      <p className="text-xs text-gray-700 font-medium mb-2">
+        Built by ~ <span className="text-indigo-600 font-semibold">OneWholesale</span>
+      </p>
+
       {/* Copyright */}
       <p className="text-xs text-gray-600">
         © {new Date().getFullYear()} ORPEF. All Rights Reserved.

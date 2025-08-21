@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 
 const About = () => {
@@ -12,7 +13,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 px-6 md:px-12 py-20">
+    <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 px-6 md:px-12 py-20 overflow-hidden">
       {/* Title */}
       <h1 className="text-5xl md:text-6xl font-extrabold text-center text-gray-900">
         <span className="text-blue-600 drop-shadow-md">About Us</span>
@@ -30,17 +31,29 @@ const About = () => {
         {/* Background blur */}
         <div className="size-[520px] rounded-full absolute blur-[300px] -z-10 bg-[#E6F7FF]"></div>
 
-        {/* Image with hover effect */}
-        <div className="relative transform hover:scale-105 hover:rotate-1 transition-all duration-500 ease-out">
+        {/* Image with slide-in from left */}
+        <motion.div
+          initial={{ opacity: 0, x: -150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative transform hover:scale-105 hover:rotate-1 transition-all duration-500 ease-out"
+        >
           <img
             className="max-w-sm w-full rounded-2xl h-auto shadow-xl hover:shadow-2xl hover:shadow-blue-200"
             src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&auto=format&fit=crop"
             alt="ORPEF team"
           />
-        </div>
+        </motion.div>
 
-        {/* Text Content */}
-        <div className="md:max-w-lg">
+        {/* Text Content with slide-in from right */}
+        <motion.div
+          initial={{ opacity: 0, x: 150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="md:max-w-lg"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
             Who We Are
           </h2>
@@ -55,7 +68,7 @@ const About = () => {
             </span>.
           </p>
 
-          {/* Features (No emojis) */}
+          {/* Features */}
           <div className="flex flex-col gap-8 mt-8">
             <div>
               <h3 className="text-lg font-semibold text-slate-700">
@@ -103,7 +116,7 @@ const About = () => {
           >
             Learn More
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

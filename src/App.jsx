@@ -10,14 +10,15 @@ import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonial";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
-import Gallery1 from "./components/Gallery1"; // ✅ since it's a component
-import About1 from "./components/About1"; // ✅ since it's a component
+import Gallery1 from "./components/Gallery1"; // ✅ component
+import About1 from "./components/About1"; // ✅ component
 
 // Pages
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
-import Legal from "./components/Legal"; // ✅ since it's a component
+import Members from "./pages/Members"; // ✅ NEW Members page
+import Legal from "./components/Legal"; // ✅ component
 
 const App = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const App = () => {
                 <Services />
                 <About1 />
                 <Testimonials />
-                <Gallery1/>
+                <Gallery1 />
                 <Newsletter />
                 <Contact />
               </>
@@ -67,10 +68,13 @@ const App = () => {
           {/* Gallery Page */}
           <Route path="/gallery" element={<Gallery />} />
 
+          {/* Members Page */}
+          <Route path="/members" element={<Members />} />
+
           {/* FAQ Page */}
           <Route path="/faq" element={<FAQ />} />
 
-          {/* ✅ Legal Page (component) */}
+          {/* Legal Page */}
           <Route path="/legal" element={<Legal />} />
         </Routes>
       </main>

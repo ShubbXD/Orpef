@@ -6,19 +6,18 @@ const Gallery = () => {
 
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1543269865-0a740d43b90c?q=80&w=800&h=400&auto=format&fit=crop",
-      title: "Prompt Engineers",
-      desc: "Bridging the gap between human intent and machine understanding through expert prompt design."
+      src: "/image1.jpg",
+      title: "Mr Mohapatra & Mrs Manjhari",
+      desc: "A memory captured from our journey."
     },
     {
-      src: "https://images.unsplash.com/photo-1714976326351-0ecf0244f0fc?q=80&w=800&h=400&auto=format&fit=crop",
-      title: "Data Scientists",
-      desc: "Transforming raw data into insights that fuel innovation and informed decision-making."
+      src: "/image2.jpg",
+      title: "Mr & Mrs Rath",
+      desc: "Moments of unity and contribution."
     },
     {
-      src: "https://images.unsplash.com/photo-1736220690062-79e12ca75262?q=80&w=800&h=400&auto=format&fit=crop",
-      title: "Software Engineers",
-      desc: "Building reliable systems that connect ideas to real-world impact."
+      src: "/image3.jpg",
+      desc: "Celebrating milestones together."
     }
   ];
 
@@ -28,9 +27,7 @@ const Gallery = () => {
       <div className="text-center max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800">Walking through the memories.</h1>
         <p className="mt-4 text-base text-slate-600 leading-relaxed">
-          Every project we undertake is a journey of creativity and purpose.
-          Explore our gallery to witness the dedication and expertise poured
-          into each creation — designed not just to impress, but to inspire.A visual journey into the life and contributions of our members.  
+          A visual journey into the life and contributions of our members.  
           Every frame tells a story — of service, unity, and commitment.
         </p>
       </div>

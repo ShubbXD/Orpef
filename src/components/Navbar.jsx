@@ -36,9 +36,9 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/">
           <img
-            src="/logo.png"
+            src="/logo.jpg"
             alt="logo"
-            className="h-16 w-auto object-contain"
+            className="h-20 w-39 object-contain"
           />
         </Link>
 

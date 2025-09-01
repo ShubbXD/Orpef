@@ -91,7 +91,7 @@ const About = () => {
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">S - Strengthening</h3>
-              <p>Welcoming new life members and ensuring steady growth.</p>
+              <p>Welcoming life members and ensuring steady growth.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">C - Cultivating</h3>

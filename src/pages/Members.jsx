@@ -41,7 +41,6 @@ const Members = () => {
   const queryParams = new URLSearchParams(location.search);
   const searchQuery = queryParams.get("q")?.toLowerCase() || "";
 
-  // ✅ Filter members based on search
   const filteredMembers = members.filter(
     (m) =>
       m.name.toLowerCase().includes(searchQuery) ||

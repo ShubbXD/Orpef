@@ -6,7 +6,7 @@ export default function Footer() {
     >
       {/* ORPEF Name */}
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        Odisha Retired Power Engineers Forum (ORPEF)
+        The Odisha Retired Power Engineers Forum (ORPEF)
       </h2>
       <p className="text-sm md:text-base text-gray-700 max-w-2xl leading-relaxed mb-8">
         United by{" "}
@@ -70,7 +70,7 @@ export default function Footer() {
 
       {/* Built By */}
       <p className="text-xs text-gray-700 font-medium mb-2">
-        Built by ~ <span className="text-indigo-600 font-semibold">OneWholesale</span>
+        Site Designed & Maintained by ~ <span className="text-indigo-600 font-semibold">OneWholesale</span>
       </p>
 
       {/* Copyright */}

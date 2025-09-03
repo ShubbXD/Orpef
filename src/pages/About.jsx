@@ -30,8 +30,8 @@ const About = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="text-lg text-slate-700 text-center mt-6 max-w-3xl mx-auto leading-relaxed"
       >
-        The <span className="font-semibold text-indigo-600">Retired Engineer's Forum</span> 
-        has always been a beacon of{" "}
+        The <span className="font-semibold text-indigo-600">Retired Engineer's Forum </span> 
+         as always been a beacon of{" "}
         <span className="font-semibold text-blue-600">wisdom</span>,{" "}
         <span className="font-semibold text-blue-600">experience</span>, and{" "}
         <span className="font-semibold text-blue-600">camaraderie</span>. 

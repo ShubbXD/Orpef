@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 
 // Components
@@ -10,15 +10,26 @@ import Contact from "./components/Contact";
 import Testimonials from "./components/Testimonial";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
-import Gallery1 from "./components/Gallery1"; // ✅ component
-import About1 from "./components/About1"; // ✅ component
+import Gallery1 from "./components/Gallery1";
+import About1 from "./components/About1";
+import Legal from "./components/Legal";
 
 // Pages
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
-import Members from "./pages/Members"; // ✅ NEW Members page
-import Legal from "./components/Legal"; // ✅ component
+import Members from "./pages/Members";
+
+// ✅ ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" }); // use "smooth" if you want animation
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   useEffect(() => {
@@ -40,6 +51,9 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-900">
+      {/* ✅ Ensure scroll resets on route change */}
+      <ScrollToTop />
+
       {/* Navbar always visible */}
       <Navbar />
 
@@ -52,8 +66,9 @@ const App = () => {
             element={
               <>
                 <Home />
-                <Services />
+                
                 <About1 />
+                <Services />
                 <Testimonials />
                 <Gallery1 />
                 <Newsletter />

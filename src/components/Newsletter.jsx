@@ -3,67 +3,58 @@ import { motion } from "framer-motion";
 
 const Newsletter = () => {
   return (
-    <section className="py-20 px-6 sm:px-12 lg:px-20 bg-gradient-to-r from-blue-50 via-white to-blue-100">
-      <div className="md:grid md:grid-cols-2 max-w-5xl bg-white rounded-2xl shadow-lg overflow-hidden mx-auto">
-        {/* Left Image */}
-        <motion.img
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+    <section className="flex justify-center items-center py-12 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.02, boxShadow: "0px 8px 24px rgba(0,0,0,0.2)" }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-5xl bg-white shadow-lg rounded-2xl border border-gray-200 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8"
+      >
+        {/* Certificate Image */}
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          src="newsletter.jpg"
-          alt="Newsletter"
-          className="hidden md:block w-full h-full object-cover"
-        />
+          className="flex-shrink-0 w-full md:w-1/2 flex justify-center"
+        >
+          <img
+            src="newsletter.jpg" // change to your certificate image path
+            alt="Certification of Registration"
+            className="w-[60%] md:w-[70%] rounded-xl shadow-md border hover:scale-105 transition-transform duration-300"
+          />
+        </motion.div>
 
-        {/* Right Content */}
-        <div className="relative flex items-center justify-center p-10">
-          <div className="text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-4xl sm:text-5xl font-extrabold text-gray-900"
-            >
-              Stay Connected With <span className="text-blue-600">ORPEF</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="mt-4 text-gray-600 max-w-md mx-auto"
-            >
-              Subscribe to our newsletter and be the first to receive updates on
-              community projects, upcoming events, and insightful articles from
-              Odisha’s retired power engineers.
-            </motion.p>
-
-            {/* Email Form */}
-            <motion.form
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="mt-8 flex shadow-md rounded-lg overflow-hidden max-w-md mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 text-gray-900 outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 px-6 text-white font-semibold transition"
-              >
-                Join Now
-              </button>
-            </motion.form>
-          </div>
-        </div>
-      </div>
+        {/* Description */}
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-full md:w-1/2 text-center md:text-left"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Certification of Registration – ORPEF
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+            We are proud to announce that{" "}
+            <span className="font-semibold text-indigo-600">ORPEF</span> has
+            been officially recognized and registered for its purpose of
+            <span className="text-gray-800 font-medium">
+              {" "}
+              empowering innovation, research, and social impact
+            </span>
+            . This certification stands as a{" "}
+            <span className="text-indigo-600 font-semibold">
+              milestone in our journey
+            </span>
+            , reaffirming our commitment to drive change with{" "}
+            <span className="text-gray-800 font-medium">
+              authenticity and trust
+            </span>
+            .
+          </p>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

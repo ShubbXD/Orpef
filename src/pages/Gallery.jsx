@@ -22,18 +22,30 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="px-6 md:px-12 py-20">
-      {/* Intro */}
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800">Walking through the memories.</h1>
-        <p className="mt-4 text-base text-slate-600 leading-relaxed">
-          A visual journey into the life and contributions of our members.  
-          Every frame tells a story — of service, unity, and commitment.
-        </p>
+    // 🔥 Added mb-8 for a tiny gap before footer
+    <section className="relative w-full mb-8">
+      {/* Background Image with Overlayed Text */}
+      <div className="relative w-full h-[500px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <img
+          src="/people.jpg"
+          alt="People"
+          className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            Walking through the memories.
+          </h1>
+          <p className="mt-4 text-base md:text-lg text-gray-100 max-w-3xl leading-relaxed">
+            A visual journey into the life and contributions of our members.
+            Every frame tells a story — of service, unity, and commitment.
+          </p>
+        </div>
       </div>
 
       {/* Gallery Grid */}
-      <div className="flex items-center gap-6 h-[400px] w-full max-w-6xl mt-12 mx-auto">
+      <div className="flex items-center gap-6 h-[400px] w-full max-w-6xl mt-16 mx-auto">
         {images.map((item, idx) => (
           <div
             key={idx}

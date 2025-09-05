@@ -18,24 +18,25 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="pt-28 px-4 sm:px-10 overflow-hidden bg-blue-50">
+    <section
+      id="home"
+      className="pt-28 px-4 sm:px-10 overflow-hidden bg-blue-100"
+    >
       <main className="relative flex items-center justify-center max-w-8xl mx-auto w-full">
-        
         {/* Background Image */}
         <motion.img
           initial={{ opacity: 0, scale: 1.05 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.08 }}
           src="/powerline.jpg"
           alt="ORPEF Powerline"
-          className="rounded-[40px] h-[32rem] w-full object-cover shadow-lg transition duration-500 hover:brightness-110"
+          className="rounded-[40px] h-[32rem] w-full object-cover shadow-lg transition duration-500 hover:brightness-110 hover:shadow-2xl"
         />
 
         {/* Overlay Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-10 z-10">
-          
           {/* Top Badge */}
           <button
             className="mb-6 flex items-center space-x-2 border border-white text-white text-xs rounded-full px-4 pr-1.5 py-1.5 bg-white/20 backdrop-blur-sm hover:bg-white/30 transition"
@@ -63,14 +64,18 @@ const Home = () => {
 
           {/* Hero Heading */}
           <h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl max-w-3xl leading-tight drop-shadow-lg">
-            Together we can<span className="text-blue-650"> boost Odisha’s energy future</span>
+            Together we can
+            <span className="text-blue-650">
+              {" "}
+              boost Odisha’s energy future
+            </span>
           </h1>
 
           {/* Subtitle */}
           <p className="mt-4 text-white/90 max-w-xl text-sm sm:text-base leading-relaxed drop-shadow-md">
             We are the Odisha Retired Power Engineers Forum (ORPEF). A community
-            of experienced engineers offering voluntary support, disaster relief,
-            and technical advice for a stronger tomorrow.
+            of experienced engineers offering voluntary support, disaster
+            relief, and technical advice for a stronger tomorrow.
           </p>
 
           {/* CTA Button */}

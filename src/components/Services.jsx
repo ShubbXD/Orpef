@@ -3,7 +3,7 @@ import { Zap, Users, Shield } from "lucide-react"; // ✅ Icons
 
 export default function Services() {
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 px-6 py-20">
+    <section className="bg-gradient-to-br from-blue-100 via-gray-50 to-green-100 px-6 py-20">
       {/* Heading */}
       <h1 className="text-5xl font-bold text-center text-gray-800">
         Our Services

@@ -6,8 +6,8 @@ const rotatingTexts = [
   "Retired but Wired",
   "Powering Memories",
   "Energizing Bonds",
-  "The Legacy of Engineers",
-  "Welcome to the world of Retired Engineers",
+  "The Legacy of Retired Engineers",
+  "Welcome to the World of Retired Engineers",
 ];
 
 export default function ComponentLoader({ children, timeout = 7000 }) {

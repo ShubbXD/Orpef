@@ -13,35 +13,51 @@ const About = () => {
   }, []);
 
   return (
-    <section className="px-6 md:px-16 py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      {/* Heading */}
-      <motion.h1
+    <section className="px-4 md:px-12 py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      {/* Image with Overlayed Text */}
+      <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-extrabold text-center text-gray-900"
+        className="relative rounded-2xl overflow-hidden shadow-lg max-w-6xl mx-auto"
       >
-        <span className="text-indigo-600">About ORPEF</span>
-      </motion.h1>
+        {/* Image */}
+        <img
+          src="/about.jpg"
+          alt="About ORPEF"
+          className="w-full h-[400px] object-cover transform transition-transform duration-500 hover:scale-105"
+        />
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className="text-lg text-slate-700 text-center mt-6 max-w-3xl mx-auto leading-relaxed"
-      >
-        The <span className="font-semibold text-indigo-600">Retired Engineer's Forum </span> 
-         as always been a beacon of{" "}
-        <span className="font-semibold text-blue-600">wisdom</span>,{" "}
-        <span className="font-semibold text-blue-600">experience</span>, and{" "}
-        <span className="font-semibold text-blue-600">camaraderie</span>. 
-        Together, we strive to grow in numbers and in the{" "}
-        <span className="font-semibold text-indigo-600">value we bring</span> to society.
-      </motion.p>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Text on Image */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+            <span className="text-indigo-300">About ORPEF</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-gray-100 mt-6 max-w-3xl leading-relaxed">
+            The{" "}
+            <span className="font-semibold text-indigo-300">
+              Retired Engineer's Forum
+            </span>{" "}
+            has always been a beacon of{" "}
+            <span className="font-semibold text-blue-200">wisdom</span>,{" "}
+            <span className="font-semibold text-blue-200">experience</span>, and{" "}
+            <span className="font-semibold text-blue-200">camaraderie</span>. 
+            Together, we strive to grow in numbers and in the{" "}
+            <span className="font-semibold text-indigo-300">
+              value we bring
+            </span>{" "}
+            to society.
+          </p>
+        </div>
+      </motion.div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 mt-16">
-        {/* Image */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 mt-16 px-4 md:px-8">
+        {/* Left Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -51,23 +67,24 @@ const About = () => {
         >
           <img
             className="max-w-md w-full rounded-2xl object-cover hover:scale-105 transition-all duration-500"
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=800&auto=format&fit=crop"
+            src="/about.jpg"
             alt="Retired Engineers Forum"
           />
         </motion.div>
 
-        {/* Text */}
+        {/* Right Text inside box */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-slate-700 max-w-2xl"
+          className="bg-white rounded-2xl shadow-md p-8 md:p-10 max-w-2xl 
+                     hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
             Our Vision
           </h2>
-          <p className="text-base md:text-lg leading-relaxed">
+          <p className="text-base md:text-lg leading-relaxed text-gray-700 text-justify">
             My vision is simple: to{" "}
             <span className="font-semibold text-indigo-600">
               enhance the Forum's activities
@@ -88,26 +105,26 @@ const About = () => {
           </p>
 
           {/* SCOPE Points */}
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 space-y-5">
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">S - Strengthening</h3>
-              <p>Welcoming life members and ensuring steady growth.</p>
+              <p className="text-gray-700">Welcoming life members and ensuring steady growth.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">C - Cultivating</h3>
-              <p>Building stronger bonds via family picnics, social events, and gatherings.</p>
+              <p className="text-gray-700">Building stronger bonds via family picnics, social events, and gatherings.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">O - Organizing</h3>
-              <p>Fundraising initiatives to ensure financial stability and independence.</p>
+              <p className="text-gray-700">Fundraising initiatives to ensure financial stability and independence.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">P - Promoting</h3>
-              <p>Addressing consumer issues before the appropriate authority with responsibility.</p>
+              <p className="text-gray-700">Addressing consumer issues before the appropriate authority with responsibility.</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-indigo-600">E - Expanding</h3>
-              <p>Encouraging younger retired engineers to participate and benefit from our wisdom.</p>
+              <p className="text-gray-700">Encouraging younger retired engineers to participate and benefit from our wisdom.</p>
             </div>
           </div>
         </motion.div>
